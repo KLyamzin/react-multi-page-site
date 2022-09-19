@@ -1,8 +1,15 @@
 import './App.css';
-import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+  NavLink,
+  Redirect,
+} from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
+import Article from './pages/Article';
 
 function App() {
   return (
@@ -26,6 +33,12 @@ function App() {
           </Route>
           <Route path="/contacts">
             <Contacts />
+          </Route>
+          <Route path="/articles/:id">
+            <Article />
+          </Route>
+          <Route path="*">
+            <Redirect to="/"></Redirect>
           </Route>
         </Switch>
       </BrowserRouter>
